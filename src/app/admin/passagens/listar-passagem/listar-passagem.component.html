@@ -1,0 +1,48 @@
+<div class="tituloListas">
+    <h1 class="titulo-principal">Lista de Passagens</h1>
+    <button class="btnIncluir" routerLink="/admin/passagens/incluir" color="primary">
+        <mat-icon class="material-icons-outlined">add</mat-icon>
+    </button>
+</div>
+<table class="tabela" mat-table [dataSource]="passagens">
+
+    <ng-container matColumnDef="id">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="origem">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Origem </th>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.origem}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="preco">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Preço </th>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.preco | formatoReal }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="taxas">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Taxas </th>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.taxas | formatoReal }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qtde_pessoas">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Qtde Pessoas </th>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.qtde_pessoas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
+        <td class="ultima-coluna" mat-cell *matCellDef="let passagem">
+            <a class="btnEditar" routerLink="/admin/passagens/editar/{{ passagem.id }}">
+                <mat-icon class="material-icons-outlined">edit</mat-icon>
+            </a>
+            <a class="btnExcluir" routerLink="/admin/passagens/excluir/{{ passagem.id }}">
+                <mat-icon class="material-icons-outlined">clear</mat-icon>
+            </a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>

@@ -1,0 +1,25 @@
+<div class="tituloListas">
+    <h1 class="titulo-principal">Nova Passagem</h1>
+</div>
+<form>
+    <mat-card>
+        <mat-card-content>
+            <mat-form-field class="input-item">
+                <input matInput type="text" placeholder="nome" name="nomepassagem" [(ngModel)]="passagem.origem">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="descricao" name="descricao" [(ngModel)]="passagem.preco">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="foto" name="foto" [(ngModel)]="passagem.taxas">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="foto" name="foto" [(ngModel)]="passagem.qtde_pessoas">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button class="btnSalvar" (click)="salvarPassagem()" color="primary">Salvar</button>
+            <button mat-raised-button class="btnCancelar" routerLink="/admin/passagens">Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

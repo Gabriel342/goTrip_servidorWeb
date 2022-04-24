@@ -1,0 +1,49 @@
+<div class="tituloListas">
+    <h1 class="titulo-principal">Lista de Voos</h1>
+    <button class="btnIncluir" routerLink="/admin/voos/incluir" color="primary">
+        <mat-icon class="material-icons-outlined">add</mat-icon>
+    </button>
+</div>
+<table class="tabela" mat-table [dataSource]="voos">
+
+    <ng-container matColumnDef="id">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
+        <td class="container-texto" mat-cell *matCellDef="let voo"> {{voo.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="origem">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Origem </th>
+        <td class="container-texto" mat-cell *matCellDef="let voo"> {{voo.origem}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destino">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Destino </th>
+        <td class="container-texto" mat-cell *matCellDef="let voo"> {{voo.destino}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data_ida">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data de ida </th>
+        <td class="container-texto" mat-cell *matCellDef="let voo"> {{voo.data_ida}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data_volta">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data de volta </th>
+        <td class="container-texto" mat-cell *matCellDef="let voo"> {{voo.data_volta}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
+        <td class="ultima-coluna" mat-cell *matCellDef="let voo">
+            <a class="btnEditar" routerLink="/admin/voos/editar/{{ voo.id }}">
+                <mat-icon class="material-icons-outlined">edit</mat-icon>
+            </a>
+            <a class="btnExcluir" routerLink="/admin/voos/excluir/{{ voo.id }}">
+                <mat-icon class="material-icons-outlined">clear</mat-icon>
+            </a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>
+

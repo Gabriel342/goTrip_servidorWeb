@@ -1,0 +1,28 @@
+<div class="tituloListas">
+    <h1 class="titulo-principal">Editar Passagem</h1>
+</div>
+<form>
+    <mat-card>
+        <mat-card-content>
+            <mat-form-field class="input-item">
+                <input matInput type="text" placeholder="id" name="id" [(ngModel)]="passagem.id">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="text" placeholder="nome" name="origem" [(ngModel)]="passagem.origem">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="Preço" name="preco" [(ngModel)]="passagem.preco">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="Taxas" name="taxas" [(ngModel)]="passagem.taxas">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput type="number" placeholder="Qtde pessoas" name="qtde_pessoas" [(ngModel)]="passagem.qtde_pessoas">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button class="btnSalvar" (click)="atualizarPassagem()" color="primary">Editar</button>
+            <button mat-raised-button class="btnCancelar" routerLink="/admin/passagens">Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

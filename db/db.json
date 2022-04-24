@@ -1,0 +1,82 @@
+{
+  "locais": [
+    {
+      "id": 1,
+      "nomeLocal": "Rio de Janeiro",
+      "descricao": "A cidade do Rio de Janeiro, constituída por paisagens de excepcional beleza cênica, tem na água e na montanha os regentes de sua geografia exuberante.",
+      "foto": "../assets/image/rio.jpg"
+    },
+    {
+      "id": 2,
+      "nomeLocal": "São Paulo",
+      "descricao": "São Paulo, centro financeiro do Brasil, está entre as cidades mais populosas do mundo, com diversas instituições culturais e uma rica tradição arquitetônica.",
+      "foto": "../assets/image/saopaulo.jpg"
+    },
+    {
+      "id": 3,
+      "nomeLocal": "Curitiba",
+      "descricao": "Maior cidade do Sul do país, com quase 2 milhões de habitantes, Curitiba é referência em qualidade de vida e foi eleita a cidade mais inteligente do Brasil.",
+      "foto": "../assets/image/curitiba.jpg"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João",
+      "idade": "20",
+      "saldo_carteira": "1500"
+    },
+    {
+      "id": "2",
+      "nome": "Anderson",
+      "idade": "30",
+      "saldo_carteira": 7600
+    }
+  ],
+  "voos": [
+    {
+      "id": "0",
+      "origem": "Curitiba",
+      "destino": "Rio de Janeiro",
+      "data_ida": "2022-01-03",
+      "data_volta": "2022-02-28"
+    },
+    {
+      "id": "1",
+      "origem": "Rio de janeiro",
+      "destino": "São Paulo",
+      "data_ida": "2022-03-12",
+      "data_volta": "2022-04-20"
+    },
+    {
+      "id": "2",
+      "origem": "São Paulo",
+      "destino": "Cuiabá",
+      "data_ida": "2022-04-25",
+      "data_volta": "2022-05-10"
+    }
+  ],
+  "passagens": [
+    {
+      "id": "1",
+      "origem": "São Paulo",
+      "preco": "700",
+      "taxas": "",
+      "qtde_pessoas": ""
+    },
+    {
+      "id": "2",
+      "origem": "Curitiba",
+      "preco": "",
+      "taxas": "",
+      "qtde_pessoas": ""
+    },
+    {
+      "id": "3",
+      "origem": "Cuiabá",
+      "preco": "",
+      "taxas": "",
+      "qtde_pessoas": ""
+    }
+  ]
+}

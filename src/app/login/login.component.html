@@ -1,0 +1,30 @@
+<div class="login">
+    <div class="login-container">
+        <h4 class="titulo-usuario">Já sou um usuário!</h4>
+        <div class="form-login">
+            <p class="titulo-login">E-mail</p>
+            <div class="container-email">
+                <mat-form-field class="campo-email">
+                <mat-label>Insira seu e-mail</mat-label>
+                <input matInput placeholder="exemplo@exemplo.com" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <p class="titulo-login">Senha</p>
+            <div class="example-container">
+                <mat-form-field >
+                  <mat-label>Insira sua senha</mat-label>
+                  <input  class="login-input" matInput [type]="hide ? 'password' : 'text'" required>
+                  <button class="botao-olho" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon class="icone-olho">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+            </div>
+        </div>
+        <button class="botao-login"><a [routerLink]="'/admin'" class="login-admin">Entrar</a></button>
+        <div class="cadastro-container">
+            <h4 class="titulo-cadastro">Não possui conta?</h4>
+            <button class="botao-cadastro">Cadastre-se</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="tituloListas">
+    <h1 class="titulo-principal">Excluir Voo</h1>
+</div>
+<form>
+    <mat-card>
+        <mat-card-content>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="text" placeholder="origem" name="origem" [(ngModel)]="voo.origem">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="text" placeholder="destino" name="destino" [(ngModel)]="voo.destino">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="date" placeholder="data de ida" name="data_ida" [(ngModel)]="voo.data_ida">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="date" placeholder="data de volta" name="data_volta" [(ngModel)]="voo.data_volta">
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button class="btnSalvar" (click)="excluirVoo()" color="primary">Excluir</button>
+            <button mat-raised-button class="btnCancelar" routerLink="/admin/voos">Cancelar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
