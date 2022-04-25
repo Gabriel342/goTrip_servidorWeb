@@ -25,12 +25,15 @@ import { ListarPassagemComponent } from './admin/passagens/listar-passagem/lista
 import { ExcluirViagemComponent } from './admin/viagens/excluir-viagem/excluir-viagem.component';
 import { IncluirViagemComponent } from './admin/viagens/incluir-viagem/incluir-viagem.component';
 import { ListarViagemComponent } from './admin/viagens/listar-viagem/listar-viagem.component';
+import { BuscaComponent } from './busca/busca.component';
 
 const routes: Routes = [
+
+  { path: 'login', component: LoginComponent },
+  { path: 'pesquisa', component: PesquisaComponent },
+  { path: 'busca', component: BuscaComponent },
   { path: '', component: HomeComponent },
-  {
-  
-    path: 'admin', component: AdminComponent,
+  {     path: 'admin', component: AdminComponent,
     children: [
 
       //clientes
@@ -64,9 +67,7 @@ const routes: Routes = [
       { path: 'locais/editar/:id', component: EditarLocalComponent },
 
     ]
-  },
-  { path: 'login', component: LoginComponent },
-  { path: 'pesquisa', component: PesquisaComponent }
+  }
 
 ];
 

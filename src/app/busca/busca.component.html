@@ -1,0 +1,21 @@
+<h1>Origem: {{ origem }}</h1>
+
+<input type="text" [(ngModel)]="origem">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Origem</th>
+        <th>Destino</th>
+        <th>Data ida</th>
+        <th>Data volta</th>
+        <th>Preço</th>
+    </tr>
+    <tr *ngFor="let passagem of passagensFiltradas">
+        <td> {{ passagem.id }} </td>
+        <td> {{ passagem.origem }}</td>
+        <td> {{ passagem.destino }}</td>
+        <td> {{ passagem.data_ida }}</td>
+        <td> {{ passagem.data_volta }}</td>
+        <td> {{ passagem.preco }}</td>
+    </tr>
+</table>

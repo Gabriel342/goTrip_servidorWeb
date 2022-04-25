@@ -47,6 +47,7 @@ import { EditarPassagemComponent } from './admin/passagens/editar-passagem/edita
 import { ListarPassagemComponent } from './admin/passagens/listar-passagem/listar-passagem.component';
 import { IncluirPassagemComponent } from './admin/passagens/incluir-passagem/incluir-passagem.component';
 import { FormatoRealPipe } from './formato-real.pipe';
+import { BuscaComponent } from './busca/busca.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { FormatoRealPipe } from './formato-real.pipe';
     ListarPassagemComponent,
     EditarPassagemComponent,
     ExcluirPassagemComponent,
-    FormatoRealPipe
+    FormatoRealPipe,
+    BuscaComponent
   ],
   imports: [
     MatDatepickerModule,

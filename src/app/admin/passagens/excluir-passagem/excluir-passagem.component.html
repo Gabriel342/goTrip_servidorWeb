@@ -8,13 +8,22 @@
                 <input matInput readonly type="text" placeholder="Origem" name="origem" [(ngModel)]="passagem.origem">
             </mat-form-field>
             <mat-form-field class="input-item">
+                <input matInput readonly type="text" placeholder="Destino" name="destino" [(ngModel)]="passagem.destino">
+            </mat-form-field>
+            <mat-form-field class="input-item">
                 <input matInput readonly type="number" placeholder="Preço" name="preco" [(ngModel)]="passagem.preco">
             </mat-form-field>
             <mat-form-field class="input-item">
                 <input matInput readonly type="number" placeholder="Taxas" name="taxas" [(ngModel)]="passagem.taxas">
             </mat-form-field>
             <mat-form-field class="input-item">
-                <input matInput readonly type="number" placeholder="Qtde Pessoas" name="qtde_pessoas" [(ngModel)]="passagem.qtde_pessoas">
+                <input matInput readonly type="number" placeholder="Qtde pessoas" name="qtde_pessoas" [(ngModel)]="passagem.qtde_pessoas">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="date" placeholder="Data ida" name="data_ida" [(ngModel)]="passagem.data_ida">
+            </mat-form-field>
+            <mat-form-field class="input-item">
+                <input matInput readonly type="date" placeholder="Data volta" name="data_volta" [(ngModel)]="passagem.data_volta">
             </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
