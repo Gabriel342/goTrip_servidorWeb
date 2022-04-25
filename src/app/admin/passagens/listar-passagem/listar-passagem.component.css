@@ -35,7 +35,7 @@
   padding-bottom: 50px;
 }
 .container-titulo {
-  padding: 0 150px 0 0;
+  padding: 0 100px 0 0;
   text-align: start;
   font-size: 15px;
   border-bottom: 1px solid black;
@@ -44,6 +44,10 @@
 .container-texto {
   background-color: rgb(200, 200, 200);
   padding: 15px 0;
+}
+
+.qtd_pessoas{
+  
 }
 
 .btnEditar {
