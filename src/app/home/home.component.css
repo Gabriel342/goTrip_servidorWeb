@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(255, 255, 255);
 }
 
 .guia-destinos {
@@ -88,7 +88,7 @@ body {
 .texto-atributos {
   width: 200px;
   height: 300px;
-  background: rgba(230, 230, 230);
+  background: rgba(255, 255, 255);
   padding: 20px 30px 40px 50px;
   border-top-left-radius: 20%;
   border-bottom-left-radius: 20%;
