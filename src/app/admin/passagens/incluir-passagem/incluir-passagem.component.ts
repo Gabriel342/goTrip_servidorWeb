@@ -1,8 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Passagem } from 'src/models/passagem.model';
-import { PassagemService } from 'src/services/passagem.service';
+import { Passagem } from 'src/app/models/passagem.model';
+import { PassagemService } from 'src/app/services/passagem.service';
 
 @Component({
   selector: 'app-incluir-passagem',

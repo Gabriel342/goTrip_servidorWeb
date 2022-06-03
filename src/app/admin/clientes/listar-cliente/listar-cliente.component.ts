@@ -1,5 +1,5 @@
-import { Cliente } from 'src/models/clinte.model';
-import { ClienteService } from 'src/services/cliente.service';
+import { Cliente } from 'src/app/models/clinte.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

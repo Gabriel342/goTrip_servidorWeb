@@ -1,4 +1,4 @@
-import { Voo } from 'src/models/voo.model';
+import { Voo } from 'src/app/models/voo.model';
 
 export class Passagem {
     //voo: Voo = new Voo;

@@ -1,5 +1,5 @@
-import { Voo } from 'src/models/voo.model';
-import { VooService } from 'src/services/voo.service';
+import { Voo } from 'src/app/models/voo.model';
+import { VooService } from 'src/app/services/voo.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ export class IncluirVooComponent implements OnInit {
   constructor(private service: VooService, private router: Router) { }
 
   salvarVoo(){
-    this.service.incluir(this.voo).subscribe(() => {
+    this.service.salvar(this.voo).subscribe(() => {
       this.router.navigate(['/admin/voos']);
     });
   }

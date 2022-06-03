@@ -5,6 +5,6 @@ import { observable } from "rxjs";
     providedIn: 'root'
 })
 
-export class BuscaService{
-    
+export class BuscaService {
+
 }

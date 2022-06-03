@@ -12,23 +12,23 @@ export class LocaisService {
 
   constructor(private http: HttpClient) { }
 
-  listar() : Observable<Local[]>{    
+  listar(): Observable<Local[]> {
     return this.http.get<Local[]>(this.URL);
   }
 
-  buscarPorId(id : number): Observable<Local>{
+  buscarPorId(id: number): Observable<Local> {
     return this.http.get<Local>(this.URL + "/" + id)
   }
 
-  incluir(local : Local): Observable<any>{
+  incluir(local: Local): Observable<any> {
     return this.http.post<any>(this.URL, local);
   }
 
-  atualizar(idAtualizar: number, localAlterado: Local) : Observable<any> {
+  atualizar(idAtualizar: number, localAlterado: Local): Observable<any> {
     return this.http.put<any>(this.URL + "/" + idAtualizar, localAlterado);
   }
 
-  excluir(id : number) : Observable<any>{
+  excluir(id: number): Observable<any> {
     return this.http.delete<any>(this.URL + "/" + id);
   }
 }

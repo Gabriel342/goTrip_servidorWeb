@@ -1,5 +1,5 @@
-import { Cliente } from 'src/models/clinte.model';
-import { ClienteService } from 'src/services/cliente.service';
+import { Cliente } from 'src/app/models/clinte.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ export class IncluirClienteComponent implements OnInit {
   constructor(private service: ClienteService, private router: Router) { }
 
   salvarCliente(){
-    this.service.incluir(this.cliente).subscribe(() => {
+    this.service.salvar(this.cliente).subscribe(() => {
       this.router.navigate(['/admin/clientes']);
     });
   }

@@ -1,6 +1,6 @@
-import { LocaisService } from './../../services/locais.service';
+import { LocaisService } from '../services/locais.service';
 import { Component, OnInit } from '@angular/core';
-import { Local } from 'src/models/locais.model';
+import { Local } from 'src/app/models/locais.model';
 
 @Component({
   selector: 'app-home',

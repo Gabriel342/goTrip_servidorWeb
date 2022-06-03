@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { VooService } from 'src/services/voo.service';
-import { Voo } from 'src/models/voo.model';
+import { VooService } from 'src/app/services/voo.service';
+import { Voo } from 'src/app/models/voo.model';
 
 @Component({
   selector: 'app-excluir-voo',
@@ -16,14 +16,14 @@ export class ExcluirVooComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(voo => {
+    this.service.buscarPorCodigo(Number(id)).subscribe(voo => {
       this.voo = voo;
     });
 
   }
 
   excluirVoo() {
-    this.service.excluir(this.voo.id).subscribe(() => {
+    this.service.excluir(this.voo.codigo).subscribe(() => {
       this.router.navigate(['/admin/voos']);
     });
   }

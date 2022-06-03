@@ -1,5 +1,5 @@
-import { Voo } from 'src/models/voo.model';
-import { VooService } from 'src/services/voo.service';
+import { Voo } from 'src/app/models/voo.model';
+import { VooService } from 'src/app/services/voo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,7 +1,7 @@
-import { VooService } from 'src/services/voo.service';
+import { VooService } from 'src/app/services/voo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Voo } from 'src/models/voo.model';
+import { Voo } from 'src/app/models/voo.model';
 
 
 @Component({
@@ -17,14 +17,14 @@ export class EditarVooComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(voo => {
+    this.service.buscarPorCodigo(Number(id)).subscribe(voo => {
       this.voo = voo;
     });
 
   }
 
   atualizarVoo() {
-    this.service.atualizar(this.voo.id, this.voo).subscribe(() => {
+    this.service.atualizar(this.voo).subscribe(() => {
       this.router.navigate(['/admin/voos']);
     });
   }

@@ -1,6 +1,6 @@
 
-import { PassagemService } from 'src/services/passagem.service';
-import { Passagem } from 'src/models/passagem.model';
+import { PassagemService } from 'src/app/services/passagem.service';
+import { Passagem } from 'src/app/models/passagem.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
