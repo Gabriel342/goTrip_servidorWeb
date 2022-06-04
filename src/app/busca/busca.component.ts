@@ -1,8 +1,6 @@
 import { PassagemService } from 'src/app/services/passagem.service';
 import { Passagem } from 'src/app/models/passagem.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-busca',
@@ -11,50 +9,19 @@ import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 })
 export class BuscaComponent implements OnInit {
 
+  searchText: string = '';
+  field: string = 'origem';
   passagens: Passagem[];
-  passagensFiltradas: Passagem[];
-  _id!: number;
-  _origem: string = '';
-  _destino!: string;
-  _preco!: number;
-  _taxas!: number;
-  _qtde_pessoas!: number;
 
-  get origem(){
-    return this._origem;
-  }
-
-  set origem(valor: string){
-    this._origem = valor;
-    this.passagensFiltradas = this.filterPassagemByOrigem(valor);
-  }
-
-  constructor(private service: PassagemService, private actRoute: ActivatedRoute) {
+  constructor(private service: PassagemService) {
     this.passagens = [];
-    this.passagensFiltradas = [];
   }
 
-  ngOnInit() {
-    
-    this.actRoute.queryParams.subscribe(params => {
-      // this.origem = params['origem'];
-      this._origem = params['origem'];
-      console.log('parametros da URL:');
-      console.log(params);
+  ngOnInit(): void {
+    console.log(this.field);
+    this.service.listar().subscribe(passagem => {
+      this.passagens = passagem;
     });
-
-    this.passagensFiltradas = this.passagens;
-    console.log(this.passagensFiltradas);
-
   }
 
-  filterPassagemByOrigem(termo: string){
-    if(this.passagens.length === 0 || termo === ''){
-      return this.passagens;
-    } else {
-      return this.passagens.filter((passagem) => {
-        return passagem.origem.toLowerCase() === termo.toLowerCase();
-      });
-    }
-  }
 }

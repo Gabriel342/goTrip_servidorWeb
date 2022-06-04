@@ -1,6 +1,10 @@
-<h1>Origem: {{ origem }}</h1>
+<input type="text" [(ngModel)]="searchText" passagens.data="passagens" passagens.searchKeyword="field">
 
-<input type="text" [(ngModel)]="origem">
+<select [(ngModel)]="field">
+    <option value="origem">origem</option>
+    <option value="destino">destino</option>
+</select>
+
 <table>
     <tr>
         <th>ID</th>
@@ -10,7 +14,7 @@
         <th>Data volta</th>
         <th>Preço</th>
     </tr>
-    <tr *ngFor="let passagem of passagensFiltradas">
+    <tr *ngFor="let passagem of passagens | Filter: searchText: field.toLowerCase()">
         <td> {{ passagem.id }} </td>
         <td> {{ passagem.origem }}</td>
         <td> {{ passagem.destino }}</td>
