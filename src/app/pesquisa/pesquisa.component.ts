@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pesquisa',
@@ -11,13 +12,18 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class PesquisaComponent implements OnInit {
 
-  isIdaVolta : boolean = true;
+  isIdaVolta: boolean = true;
 
   myControl = new FormControl();
-  options: string[] = ['Curitiba - PR', 'Rio de Janeiro - RJ', 'São Paulo - SP'];
+  options: string[] = ['Curitiba', 'Rio de Janeiro', 'São Paulo'];
   filteredOptions!: Observable<string[]>;
 
-  constructor() { }
+  origemInput: string = '';
+  destinoInput: string = '';
+  data_idaInput: Date | any = '';
+  data_voltaInput: Date | any = '';
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -26,26 +32,39 @@ export class PesquisaComponent implements OnInit {
     );
   }
 
-  clickOnIdaVolta(){
+  clickOnIdaVolta() {
     this.isIdaVolta = true;
-    if(this.btnStyle == 'botao-ida-click') {
+    if (this.btnStyle == 'botao-ida-click') {
       this.btnStyle = 'botao-ida-default';
     } else {
       this.btnStyle = 'botao-ida-click';
     }
   }
 
-  clickOnIda(){
+  clickOnIda() {
     this.isIdaVolta = false;
   }
 
   btnStyle = 'botao-ida-default';
 
-
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+
+  goBusca() {
+    this.router.navigate(['/busca'], {
+      queryParams:
+      {
+        origem: this.origemInput,
+        destino: this.destinoInput,
+        idaVolta: this.isIdaVolta,
+        ida: this.data_idaInput,
+        volta: this.data_voltaInput
+      }
+    });
   }
 
 }

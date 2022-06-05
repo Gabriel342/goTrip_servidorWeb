@@ -1,9 +1,14 @@
-<input type="text" [(ngModel)]="searchText" passagens.data="passagens" passagens.searchKeyword="field">
+<app-pesquisa></app-pesquisa>
 
-<select [(ngModel)]="field">
+<label for="origem">Origem:</label>
+<input type="text" name="origem" [(ngModel)]="origemInput" passagens.data="passagens" passagens.searchKeyword="fieldOrigem" value="origemInput">
+<label for="destino">Destino</label>
+<input type="text" name="destino" [(ngModel)]="destinoInput" passagens.data="passagens" passagens.searchKeyword="fieldDestino" value="destinoInput">
+
+<!-- <select [(ngModel)]="field">
     <option value="origem">origem</option>
     <option value="destino">destino</option>
-</select>
+</select> -->
 
 <table>
     <tr>
@@ -14,7 +19,7 @@
         <th>Data volta</th>
         <th>Preço</th>
     </tr>
-    <tr *ngFor="let passagem of passagens | Filter: searchText: field.toLowerCase()">
+    <tr *ngFor="let passagem of passagens | Filter: origemInput: fieldOrigem.toLowerCase() | Filter: destinoInput: fieldDestino.toLowerCase()">
         <td> {{ passagem.id }} </td>
         <td> {{ passagem.origem }}</td>
         <td> {{ passagem.destino }}</td>

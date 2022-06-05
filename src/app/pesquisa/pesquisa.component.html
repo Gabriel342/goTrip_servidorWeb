@@ -4,9 +4,9 @@
       <h2><mat-icon class="icone-aviao">flight_takeoff</mat-icon>Passagens Aéreas</h2>
         <div class="botao-dir">
             <p class="botao-escolha">
-                <mat-button-toggle-group class="botao-total" name="fontStyle" aria-label="Font Style">
-                  <mat-button-toggle [ngClass]="[btnStyle]" (click)="clickOnIdaVolta()" class="botao-idavolta" value="IdaeVolta">Ida e Volta</mat-button-toggle>
-                  <mat-button-toggle (click)="clickOnIda()" class="botao-ida" value="Ida">Somente Ida</mat-button-toggle>
+                <mat-button-toggle-group class="botao-total" name="fontStyle" aria-label="Font Style" [(ngModel)]="isIdaVolta">
+                  <mat-button-toggle [ngClass]="[btnStyle]" (click)="clickOnIdaVolta()" class="botao-idavolta" value="true">Ida e Volta</mat-button-toggle>
+                  <mat-button-toggle (click)="clickOnIda()" class="botao-ida" value="false">Somente Ida</mat-button-toggle>
                 </mat-button-toggle-group>
             </p>
         </div>
@@ -17,13 +17,14 @@
             <p class="perg-entr">Para onde você vai?</p>
             <form class="busca-1">
                 <mat-form-field class="destino-container" appearance="fill">
-                <mat-label class="destino-text">Destino</mat-label>
+                <mat-label class="destino-text">Local de origem</mat-label>
                 <input type="text"
                         placeholder="Escolha uma opção"
                         aria-label="Destino"
                         matInput
                         [formControl]="myControl"
-                        [matAutocomplete]="auto">
+                        [matAutocomplete]="auto"
+                        [(ngModel)]="origemInput">
                         <mat-autocomplete #auto="matAutocomplete">
                             <mat-option *ngFor="let option of options" [value]="option">
                               {{option}}
@@ -39,7 +40,8 @@
                         aria-label="Destino"
                         matInput
                         [formControl]="myControl"
-                        [matAutocomplete]="auto">
+                        [matAutocomplete]="auto"
+                        [(ngModel)]="destinoInput">
                 <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                     {{option}}
@@ -53,9 +55,9 @@
                 <p>Ida</p>
                 <mat-form-field class="data-1">
                     <mat-label class="data-text">Escolha uma data</mat-label>
-                    <input matInput [matDatepicker]="picker">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="data_idaInput">
                     <mat-datepicker-toggle matSuffix [for]="picker">
-                    <mat-icon matDatepickerToggleIcon class="data-icon">keyboard_arrow_down</mat-icon>
+                        <mat-icon matDatepickerToggleIcon class="data-icon">keyboard_arrow_down</mat-icon>
                     </mat-datepicker-toggle>
                     <mat-datepicker class="data-line" #picker></mat-datepicker>
                 </mat-form-field>
@@ -64,16 +66,18 @@
                 <p>Volta</p>
                 <mat-form-field class="data-2">
                     <mat-label class="data-text">Escolha uma data</mat-label>
-                    <input matInput [matDatepicker]="picker2">
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="data_voltaInput">
                     <mat-datepicker-toggle matSuffix [for]="picker2">
-                    <mat-icon matDatepickerToggleIcon class="data-icon">keyboard_arrow_down</mat-icon>
+                        <mat-icon matDatepickerToggleIcon class="data-icon">keyboard_arrow_down</mat-icon>
                     </mat-datepicker-toggle>
                     <mat-datepicker class="data-line" #picker2></mat-datepicker>
                 </mat-form-field>
             </div>
         </div>
         <div class="bot-buscar-container">
-            <button class="botao-buscar">Buscar</button>
+            <button class="botao-buscar" (click)="goBusca()">
+                Buscar
+            </button>
         </div>
     </div>
   </div>
