@@ -15,15 +15,15 @@ export class EditarLocalComponent implements OnInit {
   constructor(private service: LocaisService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(local => {
+    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
+    this.service.buscarPorCodigo(Number(id)).subscribe(local => {
       this.local = local;
     });
 
   }
 
   atualizarLocal() {
-    this.service.atualizar(this.local.id, this.local).subscribe(() => {
+    this.service.atualizar(this.local).subscribe(() => {
       this.router.navigate(['/admin/locais']);
     });
   }

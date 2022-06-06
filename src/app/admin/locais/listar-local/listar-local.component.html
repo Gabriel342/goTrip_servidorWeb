@@ -6,14 +6,14 @@
 </div>
 <table class="tabela" mat-table [dataSource]="locais">
 
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="codigo">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
-        <td class="container-texto" mat-cell *matCellDef="let local"> {{local.id}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let local"> {{local.codigo}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="nomeLocal">
+    <ng-container matColumnDef="capital">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Nome </th>
-        <td class="container-texto" mat-cell *matCellDef="let local"> {{local.nomeLocal}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let local"> {{local.capital}} </td>
     </ng-container>
 
     <ng-container matColumnDef="descricao">
@@ -29,10 +29,10 @@
     <ng-container matColumnDef="acoes">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
         <td class="ultima-coluna" mat-cell *matCellDef="let local">
-            <a class="btnEditar" routerLink="/admin/locais/editar/{{ local.id }}">
+            <a class="btnEditar" routerLink="/admin/locais/editar/{{ local.codigo }}">
                 <mat-icon class="material-icons-outlined">edit</mat-icon>
             </a>
-            <a class="btnExcluir" routerLink="/admin/locais/excluir/{{ local.id }}">
+            <a class="btnExcluir" routerLink="/admin/locais/excluir/{{ local.codigo }}">
                 <mat-icon class="material-icons-outlined">clear</mat-icon>
             </a>
         </td>

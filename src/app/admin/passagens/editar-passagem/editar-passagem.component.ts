@@ -16,15 +16,15 @@ export class EditarPassagemComponent implements OnInit {
   constructor(private service: PassagemService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(passagem => {
+    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
+    this.service.buscarPorCodigo(Number(id)).subscribe(passagem => {
       this.passagem = passagem;
     });
 
   }
 
   atualizarPassagem() {
-    this.service.atualizar(this.passagem.id, this.passagem).subscribe(() => {
+    this.service.atualizar(this.passagem).subscribe(() => {
       this.router.navigate(['/admin/passagens']);
     });
   }

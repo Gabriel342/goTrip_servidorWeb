@@ -1,6 +1,6 @@
 export class Local {
-    id: number = 0;
-    nomeLocal: String = '';
+    codigo: number = 0;
+    capital: String = '';
     descricao: String = '';
     foto: String = '';
 }

@@ -6,9 +6,9 @@
 </div>
 <table class="tabela" mat-table [dataSource]="passagens">
 
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="codigo">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.id}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.codigo}} </td>
     </ng-container>
 
     <ng-container matColumnDef="origem">
@@ -48,10 +48,10 @@
     <ng-container matColumnDef="acoes">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
         <td class="ultima-coluna" mat-cell *matCellDef="let passagem">
-            <a class="btnEditar" routerLink="/admin/passagens/editar/{{ passagem.id }}">
+            <a class="btnEditar" routerLink="/admin/passagens/editar/{{ passagem.codigo }}">
                 <mat-icon class="material-icons-outlined">edit</mat-icon>
             </a>
-            <a class="btnExcluir" routerLink="/admin/passagens/excluir/{{ passagem.id }}">
+            <a class="btnExcluir" routerLink="/admin/passagens/excluir/{{ passagem.codigo }}">
                 <mat-icon class="material-icons-outlined">clear</mat-icon>
             </a>
         </td>

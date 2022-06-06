@@ -9,9 +9,11 @@ import { Local } from 'src/app/models/locais.model';
 })
 export class HomeComponent implements OnInit {
 
-  locais: Local[] = [];
+  locais: Local[];
 
-  constructor(private locaisService: LocaisService) { }
+  constructor(private locaisService: LocaisService) { 
+    this.locais = [];
+  }
 
   ngOnInit(): void {
     this.locaisService.listar().subscribe(local => {

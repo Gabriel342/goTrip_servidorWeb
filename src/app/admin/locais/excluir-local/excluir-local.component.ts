@@ -15,15 +15,15 @@ export class ExcluirLocalComponent implements OnInit {
   constructor(private service: LocaisService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(local => {
+    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
+    this.service.buscarPorCodigo(Number(id)).subscribe(local => {
       this.local = local;
     });
 
   }
 
   excluirLocal() {
-    this.service.excluir(this.local.id).subscribe(() => {
+    this.service.excluir(this.local.codigo).subscribe(() => {
       this.router.navigate(['/admin/locais']);
     });
   }

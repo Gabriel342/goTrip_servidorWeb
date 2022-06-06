@@ -26,10 +26,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { HttpClientModule } from "@angular/common/http";
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
-import { IncluirVooComponent } from './admin/voos/incluir-voo/incluir-voo.component';
-import { ListarVooComponent } from './admin/voos/listar-voo/listar-voo.component';
-import { EditarVooComponent } from './admin/voos/editar-voo/editar-voo.component';
-import { ExcluirVooComponent } from './admin/voos/excluir-voo/excluir-voo.component';
 import { IncluirClienteComponent } from './admin/clientes/incluir-cliente/incluir-cliente.component';
 import { ListarClienteComponent } from './admin/clientes/listar-cliente/listar-cliente.component';
 import { EditarClienteComponent } from './admin/clientes/editar-cliente/editar-cliente.component';
@@ -60,10 +56,6 @@ import { Filter } from './pipes/Filter.pipe';
     AdminComponent,
     LoginComponent,
     PesquisaComponent,
-    IncluirVooComponent,
-    ListarVooComponent,
-    EditarVooComponent,
-    ExcluirVooComponent,
     IncluirClienteComponent,
     ListarClienteComponent,
     EditarClienteComponent,

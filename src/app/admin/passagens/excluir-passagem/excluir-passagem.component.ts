@@ -16,15 +16,15 @@ export class ExcluirPassagemComponent implements OnInit {
   constructor(private service: PassagemService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.service.buscarPorId(Number(id)).subscribe(passagem => {
+    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
+    this.service.buscarPorCodigo(Number(id)).subscribe(passagem => {
       this.passagem = passagem;
     });
 
   }
 
   excluirPassagem() {
-    this.service.excluir(this.passagem.id).subscribe(() => {
+    this.service.excluir(this.passagem.codigo).subscribe(() => {
       this.router.navigate(['/admin/passagens']);
     });
   }

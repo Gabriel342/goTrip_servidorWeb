@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListarLocalComponent implements OnInit {
 
   locais: Local[];
-  colunas: string[] = ['id', 'nomeLocal', 'descricao', 'foto', 'acoes'];
+  colunas: string[] = ['codigo', 'capital', 'descricao', 'foto', 'acoes'];
 
   constructor(private service: LocaisService) {
     this.locais = [];

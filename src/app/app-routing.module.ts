@@ -14,10 +14,6 @@ import { EditarLocalComponent } from './admin/locais/editar-local/editar-local.c
 import { ExcluirLocalComponent } from './admin/locais/excluir-local/excluir-local.component';
 import { IncluirLocalComponent } from './admin/locais/incluir-local/incluir-local.component';
 import { ListarLocalComponent } from './admin/locais/listar-local/listar-local.component';
-import { EditarVooComponent } from './admin/voos/editar-voo/editar-voo.component';
-import { ExcluirVooComponent } from './admin/voos/excluir-voo/excluir-voo.component';
-import { IncluirVooComponent } from './admin/voos/incluir-voo/incluir-voo.component';
-import { ListarVooComponent } from './admin/voos/listar-voo/listar-voo.component';
 import { EditarPassagemComponent } from './admin/passagens/editar-passagem/editar-passagem.component';
 import { ExcluirPassagemComponent } from './admin/passagens/excluir-passagem/excluir-passagem.component';
 import { IncluirPassagemComponent } from './admin/passagens/incluir-passagem/incluir-passagem.component';
@@ -41,12 +37,6 @@ const routes: Routes = [
       { path: 'clientes/incluir', component: IncluirClienteComponent },
       { path: 'clientes/excluir/:id', component: ExcluirClienteComponent },
       { path: 'clientes/editar/:id', component: EditarClienteComponent },
-
-      //voos
-      { path: 'voos', component: ListarVooComponent },
-      { path: 'voos/incluir', component: IncluirVooComponent },
-      { path: 'voos/excluir/:id', component: ExcluirVooComponent },
-      { path: 'voos/editar/:id', component: EditarVooComponent },
 
       //passagens
       { path: 'passagens', component: ListarPassagemComponent },
