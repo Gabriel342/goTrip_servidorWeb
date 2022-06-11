@@ -1,10 +1,12 @@
 <ul>
     <li class="conta">
-        <a [routerLink]="'/admin'" class="conta-link"><mat-icon class="icone-conta">account_circle</mat-icon></a>
-        <a [routerLink]="'/login'" class="conta-link">Minha Conta</a>
+        <a [routerLink]="'/admin'" class="link admin-link"><mat-icon class="icone icone-admin">admin_panel_settings</mat-icon>Painel admin</a>
+    </li>
+    <li>
+        <a [routerLink]="'/login'" class="link conta-link"><mat-icon class="icone icone-link">login</mat-icon>Login</a>
     </li>
     <li class="ajuda">
-        <a [routerLink]="'/'"><mat-icon class="icone-ajuda">help_outline</mat-icon></a>
+        <a [routerLink]="'/'" class="link ajuda-link"><mat-icon class="icone icone-ajuda">help_outline</mat-icon>Sobre</a>
     </li>  
 </ul>
 

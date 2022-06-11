@@ -36,10 +36,9 @@ import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/exclui
 
 const routes: Routes = [
 
-  { path: 'login', component: LoginComponent },
-  { path: 'pesquisa', component: PesquisaComponent },
-  { path: 'busca', component: BuscaComponent },
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'busca', component: BuscaComponent },
   { path: 'admin', component: AdminComponent,
     children: [
 

@@ -42,7 +42,7 @@
 }
 
 .container-texto {
-  background-color: rgb(200, 200, 200);
+  background-color: rgba(200, 200, 200, 0.4);
   padding: 15px 0;
 }
 
