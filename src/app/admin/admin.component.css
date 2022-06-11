@@ -21,6 +21,7 @@
 }
 
 .menu-item {
+    cursor: pointer;
     list-style: none;
     background-color: rgb(50, 50, 50);
     width: 160px;

@@ -23,6 +23,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 import { HttpClientModule } from "@angular/common/http";
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
@@ -42,6 +43,11 @@ import { ExcluirPassagemComponent } from './admin/passagens/excluir-passagem/exc
 import { EditarPassagemComponent } from './admin/passagens/editar-passagem/editar-passagem.component';
 import { ListarPassagemComponent } from './admin/passagens/listar-passagem/listar-passagem.component';
 import { IncluirPassagemComponent } from './admin/passagens/incluir-passagem/incluir-passagem.component';
+import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-usuario.component';
+import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
+import { ListarUsuarioComponent } from './admin/usuarios/listar-usuario/listar-usuario/listar-usuario.component';
+import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/incluir-usuario/incluir-usuario.component';
+
 import { BuscaComponent } from './busca/busca.component';
 import { FormatoRealPipe } from './pipes/formato-real.pipe';
 import { Filter } from './pipes/Filter.pipe';
@@ -72,6 +78,10 @@ import { Filter } from './pipes/Filter.pipe';
     ListarPassagemComponent,
     EditarPassagemComponent,
     ExcluirPassagemComponent,
+    ExcluirUsuarioComponent,
+    ListarUsuarioComponent,
+    IncluirUsuarioComponent,
+    EditarUsuarioComponent,
     BuscaComponent,
     FormatoRealPipe,
     Filter
@@ -88,6 +98,7 @@ import { Filter } from './pipes/Filter.pipe';
     MatIconModule,
     MatCardModule,
     MatButtonToggleModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

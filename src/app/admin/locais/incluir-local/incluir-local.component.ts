@@ -15,7 +15,7 @@ export class IncluirLocalComponent implements OnInit {
   constructor(private service: LocaisService, private router: Router) { }
 
   salvarLocal(){
-    this.service.incluir(this.local).subscribe(() => {
+    this.service.salvar(this.local).subscribe(() => {
       this.router.navigate(['/admin/locais']);
     });
   }

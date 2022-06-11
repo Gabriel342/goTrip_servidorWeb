@@ -24,7 +24,7 @@ export class EditarPassagemComponent implements OnInit {
   }
 
   atualizarPassagem() {
-    this.service.atualizar(this.passagem).subscribe(() => {
+    this.service.atualizar(this.passagem.codigo, this.passagem).subscribe(() => {
       this.router.navigate(['/admin/passagens']);
     });
   }

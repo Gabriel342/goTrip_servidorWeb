@@ -1,4 +1,3 @@
-import { dateInputsHaveChanged } from "@angular/material/datepicker/datepicker-input-base";
 import { Perfil } from "./perfil.model";
 
 export class Usuario{
@@ -8,5 +7,4 @@ export class Usuario{
     email: string = '';
     senha: string = '';
     token: string = '';
-    dataCriacao: Date = new Date();
 }

@@ -15,7 +15,7 @@ export class ExcluirClienteComponent implements OnInit {
   constructor(private service: ClienteService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
     this.service.buscarPorCodigo(Number(id)).subscribe(cliente => {
       this.cliente = cliente;
     });

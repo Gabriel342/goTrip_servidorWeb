@@ -12,10 +12,10 @@ export class EditarLocalComponent implements OnInit {
 
   local: Local = new Local();
 
-  constructor(private service: LocaisService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private service : LocaisService, private router: Router, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('codigo');
+    const id = this.route.snapshot.paramMap.get('codigo');
     this.service.buscarPorCodigo(Number(id)).subscribe(local => {
       this.local = local;
     });
@@ -23,7 +23,7 @@ export class EditarLocalComponent implements OnInit {
   }
 
   atualizarLocal() {
-    this.service.atualizar(this.local).subscribe(() => {
+    this.service.atualizar(this.local.codigo, this.local).subscribe(() => {
       this.router.navigate(['/admin/locais']);
     });
   }

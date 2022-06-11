@@ -11,7 +11,7 @@ import { PassagemService } from 'src/app/services/passagem.service';
 export class ListarPassagemComponent implements OnInit {
 
   passagens: Passagem[];
-  colunas: string[] = ['codigo', 'origem', 'destino', 'preco', 'taxas', 'qtde_pessoas', 'data_ida', 'data_volta', 'acoes'];
+  colunas: string[] = ['codigo', 'origem', 'destino', 'preco', 'qtde_pessoas', 'data_ida', 'data_volta', 'acoes'];
 
   constructor(private service: PassagemService) {
     this.passagens = [];

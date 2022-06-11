@@ -9,6 +9,6 @@ import { Injectable } from '@angular/core';
 export class UsuarioService extends GenericCRUDService<Usuario> {
 
     constructor(http: HttpClient) {
-        super(http, "http://localhost:3000/usuarios");
+        super(http, "http://localhost:3000/usuario");
     }
 }

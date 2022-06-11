@@ -5,5 +5,5 @@ export class Cliente {
     usuario: Usuario = new Usuario();
     nome: string = '';
     idade: number = 0;
-    saldo_carteira: number = 0;
+    saldoCarteira: number = 0;
 }

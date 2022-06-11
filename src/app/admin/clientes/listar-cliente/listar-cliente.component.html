@@ -6,9 +6,9 @@
 </div>
 <table class="tabela" mat-table [dataSource]="clientes">
 
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="codigo">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
-        <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.codigo}} </td>
     </ng-container>
 
     <ng-container matColumnDef="nome">
@@ -21,18 +21,23 @@
         <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.idade}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="saldo_carteira">
+    <ng-container matColumnDef="saldoCarteira">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Saldo </th>
-        <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.saldo_carteira | formatoReal}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.saldoCarteira | formatoReal}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usuario">
+        <th class="container-titulo" mat-header-cell *matHeaderCellDef> E-mail Usuario </th>
+        <td class="container-texto" mat-cell *matCellDef="let cliente"> {{cliente.usuario.email}} </td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
         <td class="ultima-coluna" mat-cell *matCellDef="let cliente">
-            <a class="btnEditar" routerLink="/admin/clientes/editar/{{ cliente.id }}">
+            <a class="btnEditar" routerLink="/admin/clientes/editar/{{ cliente.codigo }}">
                 <mat-icon class="material-icons-outlined">edit</mat-icon>
             </a>
-            <a class="btnExcluir" routerLink="/admin/clientes/excluir/{{ cliente.id }}">
+            <a class="btnExcluir" routerLink="/admin/clientes/excluir/{{ cliente.codigo }}">
                 <mat-icon class="material-icons-outlined">clear</mat-icon>
             </a>
         </td>

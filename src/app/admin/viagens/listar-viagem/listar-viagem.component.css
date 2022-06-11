@@ -31,9 +31,10 @@
   margin: auto;
 }
 
-.tabela:last-child{
+.tabela:last-child {
   padding-bottom: 50px;
 }
+
 .container-titulo {
   padding: 0 150px 0 0;
   text-align: start;

@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListarClienteComponent implements OnInit {
 
   clientes: Cliente[];
-  colunas: string[] = ['id', 'nome', 'idade', 'saldo_carteira', 'acoes'];
+  colunas: string[] = ['codigo', 'nome', 'idade', 'saldoCarteira', 'usuario', 'acoes'];
 
   constructor(private service: ClienteService) {
     this.clientes = [];

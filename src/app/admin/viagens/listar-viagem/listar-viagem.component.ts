@@ -1,4 +1,7 @@
+import { ViagemService } from 'src/app/services/viagem.service';
 import { Component, OnInit } from '@angular/core';
+import { Viagem } from 'src/app/models/viagem.model';
+
 
 @Component({
   selector: 'app-listar-viagem',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarViagemComponent implements OnInit {
 
-  constructor() { }
+  viagens: Viagem[];
+  colunas: string[] = ['codigo', 'passagem', 'cliente', 'total', 'acoes'];
+
+  constructor(private service: ViagemService) {
+    this.viagens = [];
+  }
 
   ngOnInit(): void {
+    this.service.listar().subscribe(viagem => {
+      this.viagens = viagem;
+    })
   }
 
 }

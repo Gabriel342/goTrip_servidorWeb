@@ -16,7 +16,7 @@ export class IncluirPassagemComponent implements OnInit {
   constructor(private service: PassagemService, private router: Router) { }
 
   salvarPassagem(){
-    this.service.incluir(this.passagem).subscribe(() => {
+    this.service.salvar(this.passagem).subscribe(() => {
       this.router.navigate(['/admin/passagens']);
     });
   }

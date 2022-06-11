@@ -5,23 +5,34 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
+import { BuscaComponent } from './busca/busca.component';
 
-import { EditarClienteComponent } from './admin/clientes/editar-cliente/editar-cliente.component';
-import { ExcluirClienteComponent } from './admin/clientes/excluir-cliente/excluir-cliente.component';
-import { IncluirClienteComponent } from './admin/clientes/incluir-cliente/incluir-cliente.component';
-import { ListarClienteComponent } from './admin/clientes/listar-cliente/listar-cliente.component'
+//local
+import { ListarLocalComponent } from './admin/locais/listar-local/listar-local.component';
+import { IncluirLocalComponent } from './admin/locais/incluir-local/incluir-local.component';
 import { EditarLocalComponent } from './admin/locais/editar-local/editar-local.component';
 import { ExcluirLocalComponent } from './admin/locais/excluir-local/excluir-local.component';
-import { IncluirLocalComponent } from './admin/locais/incluir-local/incluir-local.component';
-import { ListarLocalComponent } from './admin/locais/listar-local/listar-local.component';
+//cliente
+import { ListarClienteComponent } from './admin/clientes/listar-cliente/listar-cliente.component'
+import { IncluirClienteComponent } from './admin/clientes/incluir-cliente/incluir-cliente.component';
+import { EditarClienteComponent } from './admin/clientes/editar-cliente/editar-cliente.component';
+import { ExcluirClienteComponent } from './admin/clientes/excluir-cliente/excluir-cliente.component';
+//passagem
+import { ListarPassagemComponent } from './admin/passagens/listar-passagem/listar-passagem.component';
+import { IncluirPassagemComponent } from './admin/passagens/incluir-passagem/incluir-passagem.component';
 import { EditarPassagemComponent } from './admin/passagens/editar-passagem/editar-passagem.component';
 import { ExcluirPassagemComponent } from './admin/passagens/excluir-passagem/excluir-passagem.component';
-import { IncluirPassagemComponent } from './admin/passagens/incluir-passagem/incluir-passagem.component';
-import { ListarPassagemComponent } from './admin/passagens/listar-passagem/listar-passagem.component';
-import { ExcluirViagemComponent } from './admin/viagens/excluir-viagem/excluir-viagem.component';
-import { IncluirViagemComponent } from './admin/viagens/incluir-viagem/incluir-viagem.component';
+//viagem
 import { ListarViagemComponent } from './admin/viagens/listar-viagem/listar-viagem.component';
-import { BuscaComponent } from './busca/busca.component';
+import { IncluirViagemComponent } from './admin/viagens/incluir-viagem/incluir-viagem.component';
+import { EditarViagemComponent } from './admin/viagens/editar-viagem/editar-viagem.component';
+import { ExcluirViagemComponent } from './admin/viagens/excluir-viagem/excluir-viagem.component';
+//usuário
+import { ListarUsuarioComponent } from './admin/usuarios/listar-usuario/listar-usuario/listar-usuario.component';
+import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/incluir-usuario/incluir-usuario.component';
+import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-usuario.component';
+import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
+
 
 const routes: Routes = [
 
@@ -29,32 +40,38 @@ const routes: Routes = [
   { path: 'pesquisa', component: PesquisaComponent },
   { path: 'busca', component: BuscaComponent },
   { path: '', component: HomeComponent },
-  {     path: 'admin', component: AdminComponent,
+  { path: 'admin', component: AdminComponent,
     children: [
+
+      //usuários
+      { path: 'usuarios', component: ListarUsuarioComponent },
+      { path: 'usuarios/incluir', component: IncluirUsuarioComponent },
+      { path: 'usuarios/excluir/:codigo', component: ExcluirUsuarioComponent },
+      { path: 'usuarios/editar/:codigo', component: EditarUsuarioComponent },
 
       //clientes
       { path: 'clientes', component: ListarClienteComponent },
       { path: 'clientes/incluir', component: IncluirClienteComponent },
-      { path: 'clientes/excluir/:id', component: ExcluirClienteComponent },
-      { path: 'clientes/editar/:id', component: EditarClienteComponent },
+      { path: 'clientes/excluir/:codigo', component: ExcluirClienteComponent },
+      { path: 'clientes/editar/:codigo', component: EditarClienteComponent },
 
       //passagens
       { path: 'passagens', component: ListarPassagemComponent },
       { path: 'passagens/incluir', component: IncluirPassagemComponent },
-      { path: 'passagens/excluir/:id', component: ExcluirPassagemComponent },
-      { path: 'passagens/editar/:id', component: EditarPassagemComponent },
+      { path: 'passagens/excluir/:codigo', component: ExcluirPassagemComponent },
+      { path: 'passagens/editar/:codigo', component: EditarPassagemComponent },
 
       //viagens
       { path: 'viagens', component: ListarViagemComponent },
       { path: 'viagens/incluir', component: IncluirViagemComponent },
-      { path: 'viagens/excluir/:id', component: ExcluirViagemComponent },
-      { path: 'viagens/editar/:id', component: ListarViagemComponent },
+      { path: 'viagens/excluir/:codigo', component: ExcluirViagemComponent },
+      { path: 'viagens/editar/:codigo', component: EditarViagemComponent },
 
-      //locais
+      //locaisHome
       { path: 'locais', component: ListarLocalComponent },
       { path: 'locais/incluir', component: IncluirLocalComponent },
-      { path: 'locais/excluir/:id', component: ExcluirLocalComponent },
-      { path: 'locais/editar/:id', component: EditarLocalComponent },
+      { path: 'locais/excluir/:codigo', component: ExcluirLocalComponent },
+      { path: 'locais/editar/:codigo', component: EditarLocalComponent },
 
     ]
   }
