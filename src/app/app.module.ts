@@ -51,6 +51,8 @@ import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/inclui
 import { BuscaComponent } from './busca/busca.component';
 import { FormatoRealPipe } from './pipes/formato-real.pipe';
 import { Filter } from './pipes/Filter.pipe';
+import { AjudaComponent } from './ajuda/ajuda.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,9 @@ import { Filter } from './pipes/Filter.pipe';
     EditarUsuarioComponent,
     BuscaComponent,
     FormatoRealPipe,
-    Filter
+    Filter,
+    AjudaComponent,
+    RegistrarComponent
   ],
   imports: [
     MatDatepickerModule,

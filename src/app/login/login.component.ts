@@ -1,30 +1,45 @@
+import { Observable } from 'rxjs/internal/Observable';
+import { throwError } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup , FormControl, Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from './../services/auth.service';
+import { Location } from '@angular/common';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   hide = true;
+  email = '';
+  loginForm: FormGroup;
+  isInvalido = false;
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  password = new FormControl('', [Validators.required, Validators.minLength(6)]);
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'Você deve inserir um e-mail valido';
-    }
-
-    return this.email.hasError('email') ? 'Não é um e-mail valido' : '';
+  constructor(
+    private location: Location,
+    private fb: FormBuilder,
+    private authService: AuthService
+  ) {
+    this.loginForm = this.fb.group({
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      senha: this.fb.control('', [Validators.required])
+    });
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  logar() {
+    this.authService.login(
+      this.loginForm.value.email,
+      this.loginForm.value.senha)
+      .pipe(catchError(error => {
+        this.isInvalido = true;
+        return throwError(() => new Error(error));
+      }))
+      .subscribe(() => {
+        this.isInvalido = false;
+        this.location.back();
+      });
   }
-
 }

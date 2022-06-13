@@ -1,10 +1,10 @@
+import { AjudaComponent } from './ajuda/ajuda.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { BuscaComponent } from './busca/busca.component';
 
 //local
@@ -32,12 +32,21 @@ import { ListarUsuarioComponent } from './admin/usuarios/listar-usuario/listar-u
 import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/incluir-usuario/incluir-usuario.component';
 import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-usuario.component';
 import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
+// children: [
+//   // { path: '', component: viagemComponent },
+//   // { path: 'sucesso', component: SucessoComponent },
+//   // { path: 'erro', component: ErroComponent },
+// ],
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
+  { path: 'ajuda', component: AjudaComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'registrar', component: RegistrarComponent },
+  // { path: 'minhasPassagens', component: MinhasPassagensComponent },
   { path: 'busca', component: BuscaComponent },
   { path: 'admin', component: AdminComponent,
     children: [

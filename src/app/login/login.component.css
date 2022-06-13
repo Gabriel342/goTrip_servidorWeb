@@ -63,11 +63,8 @@
     font-weight: 500;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1ch;
-}
-
-.login-admin {
-    text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .cadastro-container {
