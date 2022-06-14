@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -52,7 +52,8 @@ import { BuscaComponent } from './busca/busca.component';
 import { FormatoRealPipe } from './pipes/formato-real.pipe';
 import { Filter } from './pipes/Filter.pipe';
 import { AjudaComponent } from './ajuda/ajuda.component';
-import { RegistrarComponent } from './registrar/registrar.component';
+import { RegistrarComponent } from './auth/registrar/registrar.component';
+import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { RegistrarComponent } from './registrar/registrar.component';
     FormatoRealPipe,
     Filter,
     AjudaComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    ComprarPassagemComponent
   ],
   imports: [
     MatDatepickerModule,

@@ -1,10 +1,11 @@
+import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { BuscaComponent } from './busca/busca.component';
 
 //local
@@ -32,7 +33,7 @@ import { ListarUsuarioComponent } from './admin/usuarios/listar-usuario/listar-u
 import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/incluir-usuario/incluir-usuario.component';
 import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-usuario.component';
 import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
-import { RegistrarComponent } from './registrar/registrar.component';
+import { RegistrarComponent } from './auth/registrar/registrar.component';
 
 // children: [
 //   // { path: '', component: viagemComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'registrar', component: RegistrarComponent },
   // { path: 'minhasPassagens', component: MinhasPassagensComponent },
   { path: 'busca', component: BuscaComponent },
+  { path: 'comprar', component: ComprarPassagemComponent },
   { path: 'admin', component: AdminComponent,
     children: [
 

@@ -1,15 +1,15 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-// @Component({
-//   selector: 'app-registrar',
-//   templateUrl: './registrar.component.html',
-//   styleUrls: ['./registrar.component.css']
-// })
-// export class RegistrarComponent implements OnInit {
+@Component({
+  selector: 'app-registrar',
+  templateUrl: './registrar.component.html',
+  styleUrls: ['./registrar.component.css']
+})
+export class RegistrarComponent implements OnInit {
 
-//   constructor() { }
+  constructor() { }
 
-//   ngOnInit() {
-//   }
+  ngOnInit(): void {
+  }
 
-// }
+}

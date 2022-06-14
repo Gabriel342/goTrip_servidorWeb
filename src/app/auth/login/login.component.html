@@ -1,27 +1,71 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="loginForm" (ngSubmit)="logar()">
-      <h2>Autenticar no sistema</h2>
-      <p><strong>Usuários e senha para teste:</strong></p>
-      <p>E-mail: bruno@gmail.com, michael@gmail.com</p>
-      <p>Senha: Senha123</p>
+<div class="login">
+  <div class="login-container">
+    <h4 class="titulo-usuario">Já sou um usuário!</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="logar()" id="formLogin">
       <mat-error *ngIf="isInvalido">
-         O usuário e a senha são inválidos!
+        O usuário e a senha são inválidos!
       </mat-error>
-      <mat-form-field class="full-width-input">
-        <input matInput type="email" placeholder="E-mail" formControlName="email" value="bruno@gmail.com" required>
-        <mat-error>
-          Por favor forneça um e-mail válido!
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Senha" formControlName="senha" value="Senha123" required>
-        <mat-error>
-          Por favor forneça uma senha válida!
-        </mat-error>
-      </mat-form-field>
-      <a id="btn-registrar" routerLink="/registrar">Registrar</a>
-      <button id="btn-logar" mat-raised-button color="primary">Logar</button>
+
+      <p class="titulo-login">E-mail</p>
+      <div class="container-email">
+        <mat-form-field class="campo-email">
+          <mat-label>Insira seu e-mail</mat-label>
+          <input matInput placeholder="exemplo@exemplo.com" formControlName="email" required>
+          <mat-error>Por favor forneça uma E-mail válido!</mat-error>
+        </mat-form-field>
+      </div>
+
+      <p class="titulo-login">Senha</p>
+      <div class="example-container">
+        <mat-form-field>
+          <mat-label>Insira sua senha</mat-label>
+          <input class="login-input" matInput [type]="hide ? 'password' : 'text'" formControlName="senha" required>
+          <button type="button" class="botao-olho" mat-icon-button matSuffix (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon class="icone-olho">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error>Por favor forneça uma senha válida!</mat-error>
+        </mat-form-field>
+      </div>
+
     </form>
-  </mat-card-content>
-</mat-card>
+
+    <button type="submit" value="Submit" form="formLogin" class="botao-login">Entrar</button>
+    
+    <div class="cadastro-container">
+      <h4 class="titulo-cadastro">Não possui conta?</h4>
+      <button routerLink="/registrar" class="botao-cadastro">Cadastre-se</button>
+    </div>
+
+  </div>
+</div>
+<app-footer></app-footer>
+
+<!-- <mat-card>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="logar()">
+        <h2>Autenticar no sistema</h2>
+        <p><strong>Usuários e senha para teste:</strong></p>
+        <p>E-mail: bruno@gmail.com, michael@gmail.com</p>
+        <p>Senha: Senha123</p>
+        <mat-error *ngIf="isInvalido">
+           O usuário e a senha são inválidos!
+        </mat-error>
+        <mat-form-field class="full-width-input">
+          <input matInput type="email" placeholder="E-mail" formControlName="email" value="bruno@gmail.com" required>
+          <mat-error>
+            Por favor forneça um e-mail válido!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Senha" formControlName="senha" value="Senha123" required>
+          <mat-error>
+            Por favor forneça uma senha válida!
+          </mat-error>
+        </mat-form-field>
+        <a id="btn-registrar" routerLink="/registrar">Registrar</a>
+        <button id="btn-logar" mat-raised-button color="primary">Logar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+   -->

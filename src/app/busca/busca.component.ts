@@ -1,7 +1,9 @@
+import { ComprarPassagemService } from './../services/comprarPassagem.service';
+import { ComprarPassagemComponent } from './../comprar-passagem/comprar-passagem.component';
 import { PassagemService } from 'src/app/services/passagem.service';
 import { Passagem } from 'src/app/models/passagem.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-busca',
@@ -10,7 +12,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BuscaComponent implements OnInit {
 
-  // searchText: string = '';
   fieldOrigem: string = 'origem';
   fieldDestino: string = 'destino';
   passagens: Passagem[];
@@ -22,15 +23,16 @@ export class BuscaComponent implements OnInit {
   voltaInput: string | null = null;
 
 
-  constructor(private service: PassagemService, private route: ActivatedRoute) {
+  constructor(private service: PassagemService, private comprar: ComprarPassagemService, private route: ActivatedRoute, private router: Router) {
     this.passagens = [];
   }
 
+  comprarPassagem(passagem: Passagem){
+    this.comprar.adicionarPassagem(passagem);
+    this.router.navigate(['/comprar']);
+  }
+
   ngOnInit(): void {
-    console.log(this.fieldOrigem);
-
-    //
-
     this.route.queryParamMap
       .subscribe(params => {
         this.origemInput = params.get('origem') || '';
@@ -41,7 +43,6 @@ export class BuscaComponent implements OnInit {
         console.log(`'Query params:' origem:${this.origemInput} - destino:${this.destinoInput} - éIdaEVolta:${this.isIdaVoltaInput} - dataIda:${this.idaInput} - dataVolta:${this.voltaInput}`);
       });
 
-    //
     this.service.listar().subscribe(passagem => {
       this.passagens = passagem;
     });

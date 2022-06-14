@@ -1,0 +1,36 @@
+<!-- <table mat-table [dataSource]="passagem">
+    <ng-container matColumnDef="origem">
+        <th mat-header-cell *matHeaderCellDef> Origem: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.origem }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destino">
+        <th mat-header-cell *matHeaderCellDef> Destino: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.destino }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data_ida">
+        <th mat-header-cell *matHeaderCellDef> Data ida: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.data_ida }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data_volta">
+        <th mat-header-cell *matHeaderCellDef> Data volta: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.data_volta }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qtde_pessoas">
+        <th mat-header-cell *matHeaderCellDef> Quantidade de pessoas: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.qtde_pessoas }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="preco">
+        <th mat-header-cell *matHeaderCellDef> Preço: </th>
+        <td mat-cell *matCellDef="let passagem"> {{ passagem.preco }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table> -->
+<p>{{passagem.origem}}</p>
+<button (click)="confirmarCompra()" >Confirmar</button>
