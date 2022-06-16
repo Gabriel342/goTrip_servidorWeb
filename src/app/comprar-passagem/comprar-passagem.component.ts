@@ -17,7 +17,6 @@ export class ComprarPassagemComponent implements OnInit {
 
   passagem: Passagem;
   cliente: Cliente = new Cliente();
-  colunas: string[] = ['origem', 'destino', 'qtde_pessoas', 'data_ida', 'data_volta', 'preco'];
 
   constructor(private comprarService: ComprarPassagemService,
     private router: Router,
@@ -25,7 +24,22 @@ export class ComprarPassagemComponent implements OnInit {
     private clienteService: ClienteService
   ) {
     this.passagem = comprarService.getPassagens();
-    // this.cliente = clienteService.cliente;
+  }
+
+  aumentarQtdePessoas(){
+    this.passagem.qtde_pessoas++;
+  }
+
+  diminuirQtdePessoas(){
+    if (this.passagem.qtde_pessoas > 1){
+      this.passagem.qtde_pessoas--;
+    } else{
+      console.log("A passagem deve ter ao menos um passageiro")
+    }
+  }
+
+  cancelarCompra(){
+    this.router.navigate(['/busca']);
   }
 
   async confirmarCompra() {
@@ -34,16 +48,15 @@ export class ComprarPassagemComponent implements OnInit {
       console.log(viagem);
       viagem.cliente = this.cliente;
       viagem.passagem = this.comprarService.getPassagens()
-      // const total = this.carrinhoService.valorTotalDoPassagem.value;
-      // passagem.total = Number(total.toFixed(2));
+      const total  = this.passagem.qtde_pessoas * this.passagem.preco;
+      viagem.total = Number(total.toFixed(2));
       this.comprarService.confirmar(viagem)
         .pipe(catchError((err) => {
           this.router.navigate(['/']);
           return throwError(() => new Error(err));
         })
         ).subscribe(() => {
-          // this.comprarService.limpar();
-          this.router.navigate(['/']);
+          this.router.navigate(['/sucesso']);
         });
 
     } else {

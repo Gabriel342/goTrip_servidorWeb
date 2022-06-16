@@ -14,6 +14,7 @@ export class BuscaComponent implements OnInit {
 
   fieldOrigem: string = 'origem';
   fieldDestino: string = 'destino';
+  fieldPreco: string = 'crescente';
   passagens: Passagem[];
 
   origemInput: string = '';
@@ -21,13 +22,13 @@ export class BuscaComponent implements OnInit {
   isIdaVoltaInput: boolean | null = true;
   idaInput: string | null = null;
   voltaInput: string | null = null;
-
+  precoInput: string | null = null;
 
   constructor(private service: PassagemService, private comprar: ComprarPassagemService, private route: ActivatedRoute, private router: Router) {
     this.passagens = [];
   }
 
-  comprarPassagem(passagem: Passagem){
+  comprarPassagem(passagem: Passagem) {
     this.comprar.adicionarPassagem(passagem);
     this.router.navigate(['/comprar']);
   }

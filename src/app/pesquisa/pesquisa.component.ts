@@ -15,7 +15,7 @@ export class PesquisaComponent implements OnInit {
   isIdaVolta: boolean = true;
 
   myControl = new FormControl();
-  options: string[] = ['Curitiba', 'Rio de Janeiro', 'São Paulo'];
+  options: string[] = ['Curitiba', 'Florianópolis', 'Rio de Janeiro', 'São Paulo', 'Cuiabá'];
   filteredOptions!: Observable<string[]>;
 
   origemInput: string = '';

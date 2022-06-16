@@ -1,4 +1,3 @@
-import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,6 +6,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { BuscaComponent } from './busca/busca.component';
+import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
+import { SucessoCompraComponent } from './sucesso-compra/sucesso-compra.component';
 
 //local
 import { ListarLocalComponent } from './admin/locais/listar-local/listar-local.component';
@@ -35,12 +36,6 @@ import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-u
 import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
 import { RegistrarComponent } from './auth/registrar/registrar.component';
 
-// children: [
-//   // { path: '', component: viagemComponent },
-//   // { path: 'sucesso', component: SucessoComponent },
-//   // { path: 'erro', component: ErroComponent },
-// ],
-
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
@@ -50,6 +45,7 @@ const routes: Routes = [
   // { path: 'minhasPassagens', component: MinhasPassagensComponent },
   { path: 'busca', component: BuscaComponent },
   { path: 'comprar', component: ComprarPassagemComponent },
+  { path: 'sucesso', component: SucessoCompraComponent },
   { path: 'admin', component: AdminComponent,
     children: [
 

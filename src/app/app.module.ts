@@ -24,6 +24,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { HttpClientModule } from "@angular/common/http";
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
@@ -54,6 +56,8 @@ import { Filter } from './pipes/Filter.pipe';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { RegistrarComponent } from './auth/registrar/registrar.component';
 import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
+import { SucessoCompraComponent } from './sucesso-compra/sucesso-compra.component';
+import { OrderPrecoPipe } from './pipes/order-preco.pipe';
 
 @NgModule({
   declarations: [
@@ -90,7 +94,9 @@ import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.co
     Filter,
     AjudaComponent,
     RegistrarComponent,
-    ComprarPassagemComponent
+    ComprarPassagemComponent,
+    SucessoCompraComponent,
+    OrderPrecoPipe
   ],
   imports: [
     MatDatepickerModule,
@@ -110,7 +116,9 @@ import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
