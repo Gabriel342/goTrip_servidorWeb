@@ -34,7 +34,7 @@
 
     <table class="tabela-passagem">
         <tr class="tabela-container"
-            *ngFor="let passagem of passagens | Filter: origemInput: fieldOrigem.toLowerCase() | Filter: destinoInput: fieldDestino.toLowerCase() | orderPreco: fieldPreco">
+            *ngFor="let passagem of passagens | Filter: origemInput: fieldOrigem.toLowerCase() | Filter: destinoInput: fieldDestino.toLowerCase() | orderPreco: fieldPreco.toLowerCase() ">
             <div class="origem-container">
                 <th class="origem-titulo">Origem</th>
                 <td class="origem-info"> {{ passagem.origem }}</td>

@@ -22,7 +22,6 @@ export class BuscaComponent implements OnInit {
   isIdaVoltaInput: boolean | null = true;
   idaInput: string | null = null;
   voltaInput: string | null = null;
-  precoInput: string | null = null;
 
   constructor(private service: PassagemService, private comprar: ComprarPassagemService, private route: ActivatedRoute, private router: Router) {
     this.passagens = [];
