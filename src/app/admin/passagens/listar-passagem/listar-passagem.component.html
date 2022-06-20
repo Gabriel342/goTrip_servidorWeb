@@ -33,11 +33,11 @@
 
     <ng-container matColumnDef="data_ida">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data ida </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_ida}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_ida | date: 'dd/MM/yyyy' }} </td>
     </ng-container>
     <ng-container matColumnDef="data_volta">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data volta </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_volta}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_volta | date: 'dd/MM/yyyy' }} </td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
