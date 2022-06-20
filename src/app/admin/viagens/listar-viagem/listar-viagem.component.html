@@ -23,7 +23,7 @@
 
     <ng-container matColumnDef="total">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Total </th>
-        <td class="container-texto" mat-cell *matCellDef="let viagem"> {{viagem.total}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let viagem"> {{viagem.total | formatoReal }} </td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
