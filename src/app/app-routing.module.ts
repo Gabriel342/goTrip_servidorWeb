@@ -1,6 +1,6 @@
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { NgModule, Component } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
@@ -35,6 +35,7 @@ import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/inclui
 import { EditarUsuarioComponent } from './admin/usuarios/editar-usuario/editar-usuario.component';
 import { ExcluirUsuarioComponent } from './admin/usuarios/excluir-usuario/excluir-usuario/excluir-usuario.component';
 import { RegistrarComponent } from './auth/registrar/registrar.component';
+import { AuthService as AuthGuard } from './services/auth.service';
 
 const routes: Routes = [
 
@@ -42,11 +43,12 @@ const routes: Routes = [
   { path: 'ajuda', component: AjudaComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registrar', component: RegistrarComponent },
-  // { path: 'minhasPassagens', component: MinhasPassagensComponent },
+  // { path: 'conta', component: ContaComponent },
   { path: 'busca', component: BuscaComponent },
   { path: 'comprar', component: ComprarPassagemComponent },
   { path: 'sucesso', component: SucessoCompraComponent },
   { path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
 
       //usuários
@@ -54,31 +56,26 @@ const routes: Routes = [
       { path: 'usuarios/incluir', component: IncluirUsuarioComponent },
       { path: 'usuarios/excluir/:codigo', component: ExcluirUsuarioComponent },
       { path: 'usuarios/editar/:codigo', component: EditarUsuarioComponent },
-
       //clientes
       { path: 'clientes', component: ListarClienteComponent },
       { path: 'clientes/incluir', component: IncluirClienteComponent },
       { path: 'clientes/excluir/:codigo', component: ExcluirClienteComponent },
       { path: 'clientes/editar/:codigo', component: EditarClienteComponent },
-
       //passagens
       { path: 'passagens', component: ListarPassagemComponent },
       { path: 'passagens/incluir', component: IncluirPassagemComponent },
       { path: 'passagens/excluir/:codigo', component: ExcluirPassagemComponent },
       { path: 'passagens/editar/:codigo', component: EditarPassagemComponent },
-
       //viagens
       { path: 'viagens', component: ListarViagemComponent },
       { path: 'viagens/incluir', component: IncluirViagemComponent },
       { path: 'viagens/excluir/:codigo', component: ExcluirViagemComponent },
       { path: 'viagens/editar/:codigo', component: EditarViagemComponent },
-
       //locaisHome
       { path: 'locais', component: ListarLocalComponent },
       { path: 'locais/incluir', component: IncluirLocalComponent },
       { path: 'locais/excluir/:codigo', component: ExcluirLocalComponent },
       { path: 'locais/editar/:codigo', component: EditarLocalComponent },
-
     ]
   }
 

@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 //Material Components
 import { MatSliderModule } from '@angular/material/slider';
@@ -27,7 +28,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-import { HttpClientModule } from "@angular/common/http";
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { IncluirClienteComponent } from './admin/clientes/incluir-cliente/incluir-cliente.component';
 import { ListarClienteComponent } from './admin/clientes/listar-cliente/listar-cliente.component';
@@ -51,13 +51,13 @@ import { ListarUsuarioComponent } from './admin/usuarios/listar-usuario/listar-u
 import { IncluirUsuarioComponent } from './admin/usuarios/incluir-usuario/incluir-usuario/incluir-usuario.component';
 
 import { BuscaComponent } from './busca/busca.component';
-import { FormatoRealPipe } from './pipes/formato-real.pipe';
-import { Filter } from './pipes/Filter.pipe';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { RegistrarComponent } from './auth/registrar/registrar.component';
 import { ComprarPassagemComponent } from './comprar-passagem/comprar-passagem.component';
 import { SucessoCompraComponent } from './sucesso-compra/sucesso-compra.component';
+import { Filter } from './pipes/Filter.pipe';
 import { OrderPrecoPipe } from './pipes/order-preco.pipe';
+import { FormatoRealPipe } from './pipes/formato-real.pipe';
 
 @NgModule({
   declarations: [
