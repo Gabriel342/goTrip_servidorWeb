@@ -23,21 +23,16 @@
 
     <ng-container matColumnDef="preco">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Preço </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.preco | formatoReal }} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="qtde_pessoas">
-        <th class="container-titulo" mat-header-cell *matHeaderCellDef> Qtde Pessoas </th>
-        <td class="container-texto qtd_pessoas" mat-cell *matCellDef="let passagem"> {{passagem.qtde_pessoas}} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.preco | formatoReal}} </td>
     </ng-container>
 
     <ng-container matColumnDef="data_ida">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data ida </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_ida | date: 'dd/MM/yyyy' }} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_ida | date: 'dd/MM/yyyy'}} </td>
     </ng-container>
     <ng-container matColumnDef="data_volta">
         <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data volta </th>
-        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_volta | date: 'dd/MM/yyyy' }} </td>
+        <td class="container-texto" mat-cell *matCellDef="let passagem"> {{passagem.data_volta | date: 'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
